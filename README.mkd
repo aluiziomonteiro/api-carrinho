@@ -1,0 +1,22 @@
+
+![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white) 
+![Hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white)
+
+
+<br/><br/>
+<h1 align="center"> # API Carrinho </h1>
+<h3 align="center"> Uma simples API para Carrinho de Compras </h3>
+
+
+<br/>
+
+## Ambiente
+1. IntelliJ 
+2. Gradle
+3. Java
+4. Postman
+
+
+## Licença
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
