@@ -2,9 +2,10 @@ package com.aluizio.sacola.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.Embeddable;
 
 @Builder
 @AllArgsConstructor
