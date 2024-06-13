@@ -11,20 +11,32 @@ import org.springframework.web.bind.annotation.*;
 @Api(value = "/ifood-dev-week/sacola")
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/ifood-dev-week/sacola") //Quando chegar uma requisição na url /sacolas
+@RequestMapping("/ifood-dev-week/sacola")
 public class SacolaResource {
 
     private final SacolaService sacolaService;
 
-    @PostMapping    // Do tipo Post
+    @PostMapping
     public Item incluirItemNaSacola(@RequestBody ItemDto itemDto){
-        return sacolaService.incluirItemNaSacola(itemDto); // envie para o serviço processar
+        return sacolaService.incluirItemNaSacola(itemDto);
     }
     @GetMapping("/{id}")
     public Sacola verSacola(@PathVariable("id") Long id){
         return sacolaService.verSacola(id);
     }
-    @PatchMapping("/fecharSacola/{sacolaId}")// atualiza parte de uma coisa. O put atualiza tudo
+
+    @DeleteMapping("excluirSacola/{id}")
+    public void excluirSacola(@PathVariable("id") Long id){
+        sacolaService.excluirSacola(id);
+    }
+
+    @DeleteMapping("/excluirItemDaSacola/{itemId}")
+    public void excluirItemDaSacola(@PathVariable("id") Long itemId,
+                                    @RequestParam("sacolaId") Long sacolaId){
+        sacolaService.excluirItemDaSacola(itemId, sacolaId);
+    }
+
+    @PatchMapping("/fecharSacola/{sacolaId}")
     public Sacola fecharSacola(@PathVariable("sacolaId") Long sacolaId,
                                @RequestParam("formaPagamento") int formaPagamento){
         return sacolaService.fecharSacola(sacolaId, formaPagamento);
